@@ -1,0 +1,158 @@
+@use "_colors" as *;
+@mixin respond-large {
+	@media (min-width: 992px) {
+		.section-title {
+			font-size: 4.8rem;
+			&::before {
+				height: 4px;
+				width: 215px;
+			}
+		}
+		.section-title-second {
+			font-size: 4.8rem;
+			&::before {
+				height: 4px;
+				width: 145px;
+			}
+		}
+		.section-title-third {
+			font-size: 4.8rem;
+			&::before {
+				height: 4px;
+				width: 150px;
+			}
+		}
+		h1.company-name {
+			font-size: 6rem;
+		}
+		.header {
+			grid-template-rows: auto repeat(2, 1fr);
+			&__text {
+				grid-row: 2/4;
+				grid-column: 1/2;
+				p {
+					font-size: 1.8rem;
+				}
+			}
+			&__img {
+				grid-row: 1/4;
+				grid-column: 2/3;
+				background-image: url(../img/hero-main-big.jpg);
+			}
+			&__arrow {
+				display: block;
+				position: absolute;
+				bottom: 3em;
+				left: 48%;
+				padding: 2em;
+				transform: translateX(-50%);
+				border: 1px solid $white;
+				border-radius: 50%;
+				&::before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					content: "";
+					width: 100%;
+					height: 100%;
+					border: 1px solid $white;
+					border-radius: 50%;
+					animation: pulse 2s infinite;
+				}
+			}
+			&__arrow-icon {
+				width: 50px;
+			}
+			&__bg-icon-one {
+				left: 6em;
+				bottom: 6em;
+				width: 10%;
+			}
+			&__bg-icon-two {
+				display: block;
+				top: 10em;
+				left: 36%;
+				width: 5%;
+				animation: rotate-left 55s infinite linear;
+			}
+		}
+		.nav {
+			grid-column: 1/2;
+			grid-row: 1/2;
+			padding: 1em;
+			&-desktop {
+				display: block;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+			}
+			&__link {
+				color: $white;
+
+				&::before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					content: "";
+					width: 100%;
+					height: 100%;
+					border: 1px solid $gold;
+					opacity: 0;
+				}
+				&:hover::before {
+					animation: pulse 1s;
+				}
+			}
+		}
+		.hamburger {
+			display: none;
+		}
+		.abc {
+			margin: 2em 10em;
+		}
+		.hero-house-first {
+			position: absolute;
+			background-image: url(../img/house-one-big.jpg);
+			overflow: hidden;
+			padding: 10em;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: 1;
+			width: 100%;
+			transition: transform 0.3s;
+		}
+		.hero-house-second {
+			position: absolute;
+			background-image: url(../img/house-two-big.jpg);
+			overflow: hidden;
+			padding: 10em;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: 1;
+			width: 100%;
+			transition: transform 0.3s;
+		}
+		.hero-house-third {
+			position: absolute;
+			background-image: url(../img/house-three-big.jpg);
+		
+			overflow: hidden;
+			padding: 10em;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: 1;
+			width: 100%;
+			transition: transform 0.3s;
+		}
+	}
+	@media (min-width: 1200px) {
+		.header {
+			&__text {
+				p {
+					font-size: 2.2rem;
+				}
+			}
+		}
+	}
+}
